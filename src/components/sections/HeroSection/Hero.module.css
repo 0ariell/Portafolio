@@ -1,0 +1,47 @@
+.gradientText {
+  background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero.module.css */
+
+/* Contenedor general del Hero (opcional si quieres animarlo también) */
+.heroContainer {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Título con un pequeño retardo */
+.title {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Subtítulo con un retardo mayor */
+.subtitle {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+/* Botón con un retardo aún mayor */
+.button {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* Keyframes para la animación fadeInUp */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
