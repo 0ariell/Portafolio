@@ -1,27 +1,30 @@
 import { motion } from "framer-motion";
 import ProjectCard from "../components/common/ProjectCard";
 import { Link } from "react-router-dom";
+import projectImage1 from "../assets/s2bj4mrvntxa3zgmrn3n.jpg";
+import projectImage2 from "../assets/maxresdefault.jpg";
+import projectImage3 from "../assets/duolingo-example-visual-aproximity.png";
 
 const Projects = () => {
     const projects = [
         {
             title: "E-commerce Platform",
             description: "Plataforma de comercio electrónico escalable con Next.js y Node.js",
-            image: "/projects/ecommerce.jpg",
+            image: projectImage1,
             tags: ["Next.js", "TypeScript", "Node.js", "MongoDB"],
             link: "#"
         },
         {
-            title: "Dashboard Analytics",
-            description: "Sistema de visualización de datos en tiempo real",
-            image: "/projects/dashboard.jpg",
+            title: "Dream Job",
+            description: "Sistema de busqueda de trabajo",
+            image: projectImage2,
             tags: ["React", "Chart.js", "Firebase", "Tailwind"],
             link: "#"
         },
         {
             title: "Dashboard Analytics",
             description: "Sistema de visualización de datos en tiempo real",
-            image: "/projects/dashboard.jpg",
+            image: projectImage3,
             tags: ["React", "Chart.js", "Firebase", "Tailwind"],
             link: "#"
         },

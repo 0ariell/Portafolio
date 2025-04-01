@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroImage from "../../../assets/Filippo6039_w_1024-1.jpg.jpg";
+import heroImage from "../../../assets/Imagen de WhatsApp 2025-03-17 a las 15.52.30_63a9c202.jpg";
 
 const Hero = () => {
   return (

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Image from "../assets/Filippo6039_w_1024-1.jpg.jpg"; // No es necesario agregar .jpg dos veces
+import Image from "../assets/Imagen de WhatsApp 2025-03-17 a las 15.52.30_63a9c202.jpg"; // No es necesario agregar .jpg dos veces
 import { Link } from "react-router-dom";
 
 const About = () => {

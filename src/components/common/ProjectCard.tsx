@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import ImageSrc from "../../assets/Filippo6039_w_1024-1.jpg.jpg";
 
+// Asegúrate de que la interfaz Project reciba 'image' como un string
 interface Project {
     title: string;
     description: string;
     tags: string[];
+    image: string; // Agrega esta propiedad
 }
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
@@ -14,8 +15,9 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
             whileHover={{ y: -5, scale: 1.02 }}
         >
             <figure className="relative h-48">
+                {/* Usa la propiedad 'image' en lugar de la imagen estática */}
                 <img
-                    src={ImageSrc}
+                    src={project.image}
                     alt={project.title || "Project Image"}
                     className="object-cover w-full h-full"
                 />

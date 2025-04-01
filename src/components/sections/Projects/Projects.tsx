@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 import WaveDivider from "../../common/WaveDivider";
-import projectImage1 from "../../../assets/Filippo6039_w_1024-1.jpg.jpg";
+import projectImage1 from "../../../assets/s2bj4mrvntxa3zgmrn3n.jpg";
+import projectImage2 from "../../../assets/maxresdefault.jpg";
+import projectImage3 from "../../../assets/duolingo-example-visual-aproximity.png";
 
 const projects = [
     {
@@ -14,14 +16,14 @@ const projects = [
     {
         title: "Proyecto 2",
         description: "Descripción del proyecto 2",
-        image: "imagen",
+        image: projectImage2,
         tags: ["Next.js", "TypeScript", "AWS"],
         link: "#"
     },
     {
         title: "Proyecto 3",
         description: "Descripción del proyecto 2",
-        image: "imagen",
+        image: projectImage3,
         tags: ["Next.js", "TypeScript", "AWS"],
         link: "#"
     },
