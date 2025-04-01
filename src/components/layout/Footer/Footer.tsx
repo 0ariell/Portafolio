@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -24,7 +23,7 @@ const Footer = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                 >
-                    {['LinkedIn', 'GitHub', 'Email'].map((item, index) => (
+                    {['LinkedIn', 'GitHub', 'Email'].map((item) => (
                         <motion.a
                             key={item}
                             href={

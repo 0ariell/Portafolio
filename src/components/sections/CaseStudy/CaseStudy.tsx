@@ -54,31 +54,15 @@ const CaseStudy = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
+
                     <ReactCompareSlider
-                        left={
-                            <img
-                                src="/before.jpg"
-                                alt="Antes"
-                                className="object-cover w-full h-full"
-                            />
-                        }
-                        right={
-                            <img
-                                src="/after.jpg"
-                                alt="Después"
-                                className="object-cover w-full h-full"
-                            />
-                        }
-                        className="h-[600px] lg:h-[700px]"
-                        handle={
-                            <motion.div
-                                className="h-14 w-14 rounded-full bg-white border-2 border-green-400 shadow-xl flex items-center justify-center"
-                                whileHover={{ scale: 1.1 }}
-                            >
-                                <div className="h-2 w-10 bg-green-400 rounded-full" />
-                            </motion.div>
-                        }
+                        itemOne={<img src="image1.jpg" alt="Image 1" className="w-full h-full object-cover" />}
+                        itemTwo={<img src="image2.jpg" alt="Image 2" className="w-full h-full object-cover" />}
+                        className="w-full h-[500px] relative" 
+                        handle={<div className="absolute top-1/2 left-1/2 w-8 h-8 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"></div>}
                     />
+
+
 
                     {/* Etiqueta de comparación */}
                     <motion.div
