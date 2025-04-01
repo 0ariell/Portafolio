@@ -3,11 +3,41 @@ import React from "react";
 
 const DesignProcess = () => {
   const steps = [
-    { title: "Research", color: "bg-green-500", text: "text-green-100" },
-    { title: "Wireframing", color: "bg-green-600", text: "text-green-50" },
-    { title: "Prototyping", color: "bg-green-700", text: "text-green-50" },
-    { title: "Final Design", color: "bg-green-800", text: "text-green-100" },
-    { title: "Testing", color: "bg-green-900", text: "text-green-100" },
+    {
+      title: "Research",
+      color: "bg-green-500",
+      text: "text-green-100",
+      description:
+        "I analyze user needs, business goals, and market trends to create a solid foundation for the design.",
+    },
+    {
+      title: "Wireframing",
+      color: "bg-green-600",
+      text: "text-green-50",
+      description:
+        "I create low-fidelity sketches to define the structure and hierarchy of the interface before adding visual details.",
+    },
+    {
+      title: "Prototyping",
+      color: "bg-green-700",
+      text: "text-green-50",
+      description:
+        "I develop interactive prototypes to test navigation and user experience before the final implementation.",
+    },
+    {
+      title: "Final Design",
+      color: "bg-green-800",
+      text: "text-green-100",
+      description:
+        "I refine the interface with detailed visual elements, ensuring brand consistency and an engaging user experience.",
+    },
+    {
+      title: "Testing",
+      color: "bg-green-900",
+      text: "text-green-100",
+      description:
+        "I conduct usability testing and make final adjustments based on real feedback to optimize the experience before launch.",
+    },
   ];
 
   return (
@@ -17,12 +47,12 @@ const DesignProcess = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent mb-4"
+            className="text-4xl leading-tight font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent mb-4"
           >
             My Design Process
           </motion.h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            A carefully crafted journey from concept to final product, ensuring perfection at every stage.
+            A structured approach from concept to final product, ensuring both functionality and aesthetics at every stage.
           </p>
         </div>
 
@@ -38,7 +68,7 @@ const DesignProcess = () => {
               className={`${step.color} min-w-[320px] h-96 p-8 rounded-2xl shadow-2xl flex flex-col justify-between transform transition-all hover:scale-[1.02] relative overflow-hidden`}
               whileHover={{
                 boxShadow: "0 25px 50px -12px rgba(0, 255, 127, 0.25)",
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -51,7 +81,7 @@ const DesignProcess = () => {
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-white">{step.title}</h3>
                 <p className="text-current opacity-90 text-sm leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+                  {step.description}
                 </p>
               </div>
 

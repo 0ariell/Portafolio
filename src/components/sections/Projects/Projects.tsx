@@ -34,9 +34,10 @@ const Projects: React.FC = () => {
             <div className="py-20">
                 <div className="max-w-7xl mx-auto px-4">
                     <motion.h2
+                        style={{ lineHeight: "normal" }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl text-center mb-16 font-bold bg-gradient-to-r from-yellow-400 via-green-400 to-green-600 bg-clip-text text-transparent"
+                        className="text-5xl leading-tight text-center mb-16 font-bold bg-gradient-to-r from-yellow-400 via-green-400 to-green-600 bg-clip-text text-transparent"
                     >
                         Proyectos Destacados
                     </motion.h2>

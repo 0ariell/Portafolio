@@ -4,7 +4,7 @@ import { useForm, ValidationError } from "@formspree/react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
-    const [state, handleSubmit] = useForm("TU_ID_DE_FORMSPREE");
+    const [state, handleSubmit] = useForm("mblgjade");
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -19,7 +19,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="min-h-screen py-20 bg-gradient-to-b from-[#0F1B0E] to-gray-900">
+        <section className="min-h-screen py-20 bg-gradient-to-b from-[#0F1B0E] to-gray-900 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 lg:px-8">
                 {/* Botón Volver al Home */}
                 <motion.div
@@ -145,10 +145,137 @@ const Contact = () => {
                             </motion.h2>
                         </div>
 
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className="space-y-8">
                             <div className="space-y-8">
-                                {/* Campos del formulario (igual que antes) */}
-                                {/* ... (Mantener los mismos campos del formulario anteriores) ... */}
+                                {/* Campo Nombre */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.3 }}
+                                >
+                                    <label htmlFor="name" className="block text-sm font-medium text-green-400 mb-2">
+                                        Your Name
+                                    </label>
+                                    <input
+                                        id="name"
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 bg-gray-900/50 rounded-lg border border-green-900/30 focus:border-green-400 focus:ring-2 focus:ring-green-400/20 outline-none transition-all text-gray-100"
+                                        placeholder="John Doe"
+                                        required
+                                    />
+                                    <ValidationError
+                                        prefix="Name"
+                                        field="name"
+                                        errors={state.errors}
+                                        className="text-red-400 text-sm mt-1"
+                                    />
+                                </motion.div>
+
+                                {/* Campo Email */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.4 }}
+                                >
+                                    <label htmlFor="email" className="block text-sm font-medium text-green-400 mb-2">
+                                        Email Address
+                                    </label>
+                                    <input
+                                        id="email"
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 bg-gray-900/50 rounded-lg border border-green-900/30 focus:border-green-400 focus:ring-2 focus:ring-green-400/20 outline-none transition-all text-gray-100"
+                                        placeholder="john@example.com"
+                                        required
+                                    />
+                                    <ValidationError
+                                        prefix="Email"
+                                        field="email"
+                                        errors={state.errors}
+                                        className="text-red-400 text-sm mt-1"
+                                    />
+                                </motion.div>
+
+                                {/* Campo Mensaje */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5 }}
+                                >
+                                    <label htmlFor="message" className="block text-sm font-medium text-green-400 mb-2">
+                                        Project Details
+                                    </label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        rows={5}
+                                        className="w-full px-4 py-3 bg-gray-900/50 rounded-lg border border-green-900/30 focus:border-green-400 focus:ring-2 focus:ring-green-400/20 outline-none transition-all text-gray-100 resize-none"
+                                        placeholder="Describe your project here..."
+                                        required
+                                    />
+                                    <ValidationError
+                                        prefix="Message"
+                                        field="message"
+                                        errors={state.errors}
+                                        className="text-red-400 text-sm mt-1"
+                                    />
+                                </motion.div>
+
+                                {/* Botón de Submit */}
+                                <motion.div
+                                    className="pt-4"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.6 }}
+                                >
+                                    <button
+                                        type="submit"
+                                        disabled={state.submitting}
+                                        className="w-full py-4 px-6 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-lg font-medium text-white transition-all duration-300 flex items-center justify-center gap-2"
+                                    >
+                                        {state.submitting ? (
+                                            <>
+                                                <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <svg
+                                                    className="w-5 h-5"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        strokeWidth={2}
+                                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                                    />
+                                                </svg>
+                                                Send Message
+                                            </>
+                                        )}
+                                    </button>
+                                </motion.div>
+
+                                {/* Mensaje de éxito */}
+                                {state.succeeded && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="text-center p-4 bg-green-900/20 rounded-lg border border-green-400/30 text-green-400"
+                                    >
+                                        🎉 Message sent successfully! I'll get back to you soon.
+                                    </motion.div>
+                                )}
                             </div>
                         </form>
                     </motion.div>
